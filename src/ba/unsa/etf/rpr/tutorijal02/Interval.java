@@ -62,27 +62,28 @@ public class Interval {
     }
 
     public Interval intersect (Interval b) {
-        double p = this.pocetnaTacka;
-        double k = this.krajnjaTacka;
-        boolean bp = this.pocetnaPripada;
-        boolean bk= this.krajnjaPripada;
-
-        if (b.pocetnaTacka > p) {
-            p = b.pocetnaTacka;
-            bp=b.pocetnaPripada;
-        }else if (b.pocetnaTacka == p) {
-            bp = bp && b.pocetnaPripada;
-        }
-
-        if (b.krajnjaTacka < k) {
-            k = b.krajnjaTacka;
-            bk=b.krajnjaPripada;
-        }else if (b.krajnjaTacka == k) {
-            bk = bk && b.krajnjaPripada;
-        }
-
-        if (p>k) return new Interval();
-        else return new Interval(p,k,bp,bk);
+//        double p = this.pocetnaTacka;
+//        double k = this.krajnjaTacka;
+//        boolean bp = this.pocetnaPripada;
+//        boolean bk= this.krajnjaPripada;
+//
+//        if (b.pocetnaTacka > p) {
+//            p = b.pocetnaTacka;
+//            bp=b.pocetnaPripada;
+//        }else if (b.pocetnaTacka == p) {
+//            bp = bp && b.pocetnaPripada;
+//        }
+//
+//        if (b.krajnjaTacka < k) {
+//            k = b.krajnjaTacka;
+//            bk=b.krajnjaPripada;
+//        }else if (b.krajnjaTacka == k) {
+//            bk = bk && b.krajnjaPripada;
+//        }
+//
+//        if (p>k) return new Interval();
+//        else return new Interval(p,k,bp,bk);
+        return intersect(this, b);
     }
 
     public static Interval intersect(Interval a, Interval b) {
